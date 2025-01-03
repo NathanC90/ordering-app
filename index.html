@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jimmy's Diner</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <h1 class="title">Jimmy's Diner</h1>
+        <p class="subtitle">The best burgers and pizzas in town.</p>
+    </header>
+    <main class="container"></main>
+    <section class="order-section hidden">
+        <h2 class="order-title">Your Order</h2>
+        <div class="order-items"></div>
+        <hr>
+        <div class="total-price">
+            <h3>Total Price:</h3>
+            <p class="price">$0</p>
+        </div>
+    </section>
+    <section class="purchase-section">
+        <button id="purchase-btn" class="general-btn">Complete Order</button>
+    </section>
+    <div class="purchased hidden">
+        Thank you for your purchase! Your order is on its way!
+    </div>
+    <section class="modal-section hidden">
+        <form id="form" class="form">
+            <h3 class="modal-title">Enter Card Details</h3>
+            <input class="modal-input" type="text" id="username" required placeholder="Enter your name">
+            <input
+                class="modal-input"
+                type="text"
+                id="card-number"
+                required
+                placeholder="Enter your card number"
+                pattern="^\d{4}-\d{4}-\d{4}-\d{4}$"
+                title="Card number must be exactly 16 digits."
+                maxlength="19"
+            >   
+            <input
+                class="modal-input"
+                type="text"
+                id="cvv"
+                required
+                placeholder="Enter CVV"
+                pattern="^\d{3,4}$"
+                title="CVV must be 3 or 4 digits."
+            >
+            <button type="submit" id="pay" class="general-btn">Pay</button>
+        </form>
+    </section>
+
+    <script src="index.js" type="module"></script>
+</body>
+</html>
